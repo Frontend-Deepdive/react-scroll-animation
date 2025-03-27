@@ -6,13 +6,24 @@ import pluginReact from "eslint-plugin-react";
 
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], languageOptions: { globals: globals.browser } },
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], plugins: ['react', '@typescript-eslint', 'prettier'], extends: [
-    "airbnb",
-    "airbnb/hooks",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-  ], },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    languageOptions: { globals: globals.browser },
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: ["react", "@typescript-eslint", "prettier"],
+    extends: [
+      "airbnb",
+      "airbnb/hooks",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+    ],
+    rules: {
+      "prettier/prettier": "error",
+    },
+  },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
 ]);
