@@ -8,12 +8,12 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 20rem;
+  gap: 30rem;
   justify-content: center;
   align-items: center;
 
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 20rem;
+  padding-bottom: 20rem;
 }
 
 .fix {
