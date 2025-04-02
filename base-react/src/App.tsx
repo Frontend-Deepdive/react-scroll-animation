@@ -1,6 +1,7 @@
 import { useScroll } from "framer-motion";
 import "./App.css";
 import { useEffect, useState } from "react";
+import FoodItem from "./components/FoodItem";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -17,13 +18,16 @@ function App() {
 
   return (
     <div className="container">
-      <div className="fix">{scrollY}</div>
-      {foodData.map((food, index) => (
-        <div key={index}>
-          <div className="emoji">{food}</div>
-          {/* <div className="progress" style={{ width: `${scrollY * 100}%` }}></div> */}
-        </div>
-      ))}
+      <div className="fix">
+        {scrollY} <br />
+      </div>
+
+      <div className="container">
+        <div className="fix">{scrollY}</div>
+        {foodData.map((food, index) => (
+          <FoodItem key={index} emoji={food} />
+        ))}
+      </div>
     </div>
   );
 }
