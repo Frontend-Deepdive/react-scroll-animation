@@ -18,8 +18,16 @@ function App() {
   return (
     <div className="container">
       <div className="fix">{scrollY}</div>
+      {foodData.map((food, index) => (
+        <div key={index}>
+          <div className="emoji">{food}</div>
+          {/* <div className="progress" style={{ width: `${scrollY * 100}%` }}></div> */}
+        </div>
+      ))}
     </div>
   );
 }
+
+const foodData: string[] = ["🍅", "🍊", "🍋", "🍏", "🫐", "🍆", "🍇"];
 
 export default App;
