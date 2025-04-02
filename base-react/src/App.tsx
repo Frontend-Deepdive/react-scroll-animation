@@ -13,6 +13,6 @@ function App() {
   );
 }
 
-const foodData: string[] = ["🍅", "🍊", "🍋", "🍏", "🫐", "🍆", "🍇"];
+const foodData: string[] = ["🍅", "🍊", "🍋", "🍏", "🫐", "🍆"];
 
 export default App;
