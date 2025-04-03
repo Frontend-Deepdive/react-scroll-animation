@@ -3,12 +3,11 @@ import Box from '../../components/FramerMotion/Box';
 const ScrollFramerMotion = () => {
   return (
     <>
-      <Box />
-      <Box />
-      <Box />
-      <Box />
-      <Box />
+      {Array.from({ length: 5 }, (_, index) => (
+        <Box key={index} index={index} />
+      ))}
     </>
   );
 };
+
 export default ScrollFramerMotion;

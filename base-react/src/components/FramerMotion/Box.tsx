@@ -1,19 +1,34 @@
 import './Box.css';
 import { motion } from 'framer-motion';
 
-const Box = () => {
+interface BoxProps {
+  index: number;
+}
+
+const boxVisiablity = {
+  hidden: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const Box: React.FC<BoxProps> = ({ index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false }}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: false, amount: 0.4 }}
+      variants={boxVisiablity}
       transition={{
         ease: 'easeInOut',
         duration: 1.2,
         y: { duration: 1 },
       }}
     >
-      <img src='https://picsum.photos/400' alt='random' width='400px' height='auto' />
+      <img
+        src={`https://picsum.photos/400?random=${index}`}
+        alt={`random ${index}`}
+        width='400px'
+        height='auto'
+      />
     </motion.div>
   );
 };
