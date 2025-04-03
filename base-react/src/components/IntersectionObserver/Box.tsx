@@ -31,10 +31,8 @@ const Box: React.FC<BoxProps> = ({ index }) => {
     };
   }, []);
 
-  // 가시성 비율에 따라 위치 동적 변경
   const dynamicStyle = {
     opacity: visibilityRatio,
-    transform: `translateY(${Math.max(0, 1 - visibilityRatio * 1.5) * 100}px)`,
   };
 
   return (
