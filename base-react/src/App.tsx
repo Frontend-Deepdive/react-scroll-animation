@@ -1,7 +1,7 @@
-import './App.css';
+import IntersectionPage from "./pages/IntersectionPage";
 
 function App() {
-  return <div>this is me</div>;
+  return <IntersectionPage />;
 }
 
 export default App;
