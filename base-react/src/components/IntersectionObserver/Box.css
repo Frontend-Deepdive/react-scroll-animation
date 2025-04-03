@@ -1,0 +1,22 @@
+img {
+  padding: 30px;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.box {
+  border-radius: 8px;
+  will-change: opacity, transform;
+  padding: 50px;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
