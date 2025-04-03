@@ -1,18 +1,20 @@
+import { forwardRef } from "react";
+
 interface ImageCardProps {
   imageUrl: string;
   author: string;
 }
 
-const ImageCard = ({ imageUrl, author }: ImageCardProps) => {
+const ImageCard = forwardRef<HTMLImageElement, ImageCardProps>(({ imageUrl, author }, ref) => {
   return (
     <div style={cardWrapper}>
-      <img src={imageUrl} alt={author} style={thumbnailImage} />
+      <img src={imageUrl} alt={author} ref={ref} style={thumbnailImage} />
       <div style={cardContent}>
         <p>{author}</p>
       </div>
     </div>
   );
-};
+});
 
 export default ImageCard;
 
