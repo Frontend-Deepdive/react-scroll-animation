@@ -1,9 +1,6 @@
 img {
   padding: 30px;
   box-sizing: border-box;
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
 }
 
 img:hover {
@@ -12,11 +9,7 @@ img:hover {
 }
 
 .box {
-  border-radius: 8px;
-  will-change: opacity, transform;
   padding: 50px;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+  margin-bottom: 100px;
+  width: 100%;
 }

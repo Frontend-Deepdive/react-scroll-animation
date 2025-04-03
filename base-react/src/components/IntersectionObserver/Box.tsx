@@ -19,7 +19,7 @@ const Box: React.FC<BoxProps> = ({ index }) => {
         }
       },
       {
-        threshold: 0.1, // 임계치 10%에서 트리거되도록 설정
+        threshold: 0.8, // 임계치 80%에서 트리거되도록 설정
       }
     );
 
