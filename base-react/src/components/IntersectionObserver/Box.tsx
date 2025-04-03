@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Box.css';
 
 interface BoxProps {
@@ -7,22 +7,19 @@ interface BoxProps {
 
 const Box: React.FC<BoxProps> = ({ index }) => {
   const boxRef = useRef<HTMLDivElement>(null);
-  const visibilityRatioRef = useRef(0); // 가시성 비율을 ref로 관리
+  const [isAnimated, setisAnimated] = useState<boolean>(false); // 애니매이션 실행 여부를 관리할 상태
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const ratio = entry.intersectionRatio;
-
-        // 리렌더링 방지
-        if (boxRef.current) {
-          boxRef.current.style.opacity = String(ratio);
+        if (entry.isIntersecting && !isAnimated) {
+          setisAnimated(true);
+          boxRef.current!.style.opacity = '1';
+          boxRef.current!.style.transform = 'translateY(0)';
         }
-
-        visibilityRatioRef.current = ratio;
       },
       {
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        threshold: 0.1, // 임계치 10%에서 트리거되도록 설정
       }
     );
 
@@ -35,10 +32,17 @@ const Box: React.FC<BoxProps> = ({ index }) => {
         observer.unobserve(boxRef.current);
       }
     };
-  }, []);
+  }, [isAnimated]); // isAnimated가 변경되면 다시 호출하도록 의존성 부여
 
   return (
-    <div ref={boxRef} className='box'>
+    <div
+      ref={boxRef}
+      className='box'
+      style={{
+        opacity: isAnimated ? 1 : 0,
+        transition: 'opacity 0.5s ease, transform 0.5s ease',
+      }}
+    >
       <img
         src={`https://picsum.photos/400?random=${index}`}
         alt={`random ${index}`}
