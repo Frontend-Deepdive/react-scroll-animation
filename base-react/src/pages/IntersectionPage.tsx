@@ -1,28 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
-import { imageAPI, ImageResponse } from "../api/imageAPI";
 import useIntersect from "../hooks/useIntersect";
 import ImageCard from "../components/ImageCard";
+import useFetchImages from "../hooks/useFetchImages";
+import { useCallback } from "react";
 
 const IntersectionPage = () => {
-  const [images, setImages] = useState<ImageResponse[]>([]);
-  const [page, setPage] = useState(1);
-  const [isFetching, setIsFetching] = useState(false);
-
-  const fetchImages = async () => {
-    if (isFetching) return;
-    setIsFetching(true);
-    try {
-      const newImages = await imageAPI.getImages({ page, limit: 10 });
-      setImages((prev) => [...prev, ...newImages]);
-    } catch (error) {
-      console.error("Failed to fetch images:", error);
-    }
-    setIsFetching(false);
-  };
-
-  useEffect(() => {
-    fetchImages();
-  }, [page]);
+  const { images, isFetching, setPage } = useFetchImages();
 
   const onIntersect = useCallback(
     (entry: IntersectionObserverEntry) => {
@@ -30,7 +12,7 @@ const IntersectionPage = () => {
         setPage((prev) => prev + 1);
       }
     },
-    [isFetching, page]
+    [isFetching, setPage]
   );
 
   const lastImageRef = useIntersect(onIntersect, {
