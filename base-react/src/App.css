@@ -1,7 +1,13 @@
+.emoji {
+  font-size: 10rem;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 30rem;
   justify-content: center;
   align-items: center;
+
+  padding-bottom: 30rem;
 }
