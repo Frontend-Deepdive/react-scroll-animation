@@ -1,26 +1,30 @@
 import './Box.css';
 import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 interface BoxProps {
   index: number;
 }
 
-const boxVisiablity = {
+const boxVisibility = {
   hidden: { opacity: 0, y: 100 },
   visible: { opacity: 1, y: 0 },
 };
 
 const Box: React.FC<BoxProps> = ({ index }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '100px' });
+
   return (
     <motion.div
+      ref={ref}
       initial='hidden'
-      whileInView='visible'
-      viewport={{ once: false, amount: 0.4 }}
-      variants={boxVisiablity}
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={boxVisibility}
       transition={{
         ease: 'easeInOut',
         duration: 1.2,
-        y: { duration: 1 },
       }}
     >
       <img
