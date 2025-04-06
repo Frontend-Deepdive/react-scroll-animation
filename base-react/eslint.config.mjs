@@ -10,6 +10,10 @@ import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 export default [
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    env: {
+      browser: true,
+      es2020: true,
+    },
     languageOptions: {
       parser: tsParser,
       ecmaVersion: 'latest',

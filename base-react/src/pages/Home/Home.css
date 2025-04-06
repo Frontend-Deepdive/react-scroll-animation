@@ -1,0 +1,88 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  min-height: 100vh;
+  gap: 20px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #666;
+  max-width: 600px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.button {
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button.intersection {
+  background-color: rgb(10, 132, 255);
+}
+
+.button.intersection:hover {
+  background-color: rgb(29, 73, 208);
+}
+
+.button.framer {
+  background-color: rgb(137, 68, 171);
+}
+
+.button.framer:hover {
+  background-color: rgb(112, 59, 139);
+}
+
+.button.gsap {
+  background-color: rgb(255, 214, 10);
+}
+
+.button.gsap:hover {
+  background-color: rgb(214, 179, 0);
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 0.8rem;
+  text-align: center;
+}
