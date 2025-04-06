@@ -1,4 +1,4 @@
-# Topic #2 React 스크롤 애니메이션 구현
+# Topic #1 React 스크롤 애니메이션 구현
 
 ## 목적
 
