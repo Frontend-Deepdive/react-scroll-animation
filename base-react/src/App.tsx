@@ -1,16 +1,7 @@
-import './App.css';
-import Box from './components/Box/Box';
+import IntersectionPage from "./pages/IntersectionPage";
 
 function App() {
-  return (
-    <div className='container'>
-      <Box />
-      <Box />
-      <Box />
-      <Box />
-      <Box />
-    </div>
-  );
+  return <IntersectionPage />;
 }
 
 export default App;
