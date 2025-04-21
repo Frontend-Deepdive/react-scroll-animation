@@ -1,20 +1,36 @@
-# frontend-tech-seminar
+# Topic #1 React 스크롤 애니메이션 구현
 
-프론트엔드 기술을 탐구하는 세미나형 스터디 📚
+## 목적
 
-## 개요
+React에서 스크롤 애니메이션을 구현하는 다양한 방법 탐구하기
 
-- 각 팀원은 관심 있는 토픽을 선정하여 관련 기술에 대해 깊이 탐구한다.
-- 탐구한 내용을 [깃허브 위키](https://github.com/Frontend-Deepdive/frontend-tech-seminar/wiki)에 업로드한다.
+## 미션 정보
 
-## Member
+> 토픽 운영자: [@abyss-s](https://github.com/abyss-s)
 
-|                 [@neungdong](https://www.github.com/neungdong)                  |                   [@abyss-s](https://www.github.com/abyss-s)                   |               [@silverain02](https://www.github.com/silverain02)                |
-| :-----------------------------------------------------------------------------: | :----------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/171216963?v=4" width="100" /> | <img src="https://avatars.githubusercontent.com/u/77565980?v=4" width="100" /> | <img src="https://avatars.githubusercontent.com/u/108103346?v=4" width="100" /> |
+- 미션 개시 : 3/31(월) 예정
+- 미션 제출 : 4/3(목) 예정
 
-## 진행방식
+## 기능 요구 사항
 
-- 미션 진행자는 토픽에 따라 팀원들이 함께 참여할 수 있는 미션을 설정한다.
-- 각 미션에 대한 레포를 새로 만들고 그에 대한 README를 작성한다.
-- 각 미션은 Pull Request(PR)로 제출하고, 이후 코드 리뷰를 진행한다.
+- 사용자가 스크롤을 내리면 각 이미지가 순차적으로 애니메이션 효과와 함께 나타나야 합니다.
+- CSS 애니메이션, GSAP, Framer Motion 등을 사용해 애니메이션을 구현합니다.
+- 성능 최적화를 고려하여 불필요한 리렌더링을 방지해야 합니다.
+- 원본 레포지토리의 main 브랜치로 Pull Request(PR)를 생성합니다.
+  - PR 제목은 `[Topic #1] 이름 미션 제출` 형식으로 작성합니다.
+  - PR 본문에는 구현한 애니메이션을 구현한 방법을 구체적으로 기재합니다.
+
+## 기술 스택
+
+- React
+- CSS 애니메이션 / GSAP / Framer Motion 등 선택
+
+## 코딩 컨벤션
+
+- 코드 스타일은 [Airbnb JavaScript 스타일 가이드](https://github.com/airbnb/javascript)를 준수합니다.
+
+## 참고 자료
+
+- [GSAP 공식 문서](https://greensock.com/docs/)
+- [Framer Motion 공식 문서](https://www.framer.com/motion/)
+- [CSS 애니메이션 가이드](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
